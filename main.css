@@ -278,10 +278,15 @@
   .hero__wrapper {
     min-height: calc(100vh - var(--height-header));
     padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .hero__content {
     text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
   }
   
   .hero__title {
@@ -686,26 +691,25 @@
   }
   
   @media screen and (min-width: 768px) {
+    /* Hero stays centered even on larger screens */
     .hero__wrapper {
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      justify-content: center;
       align-items: center;
     }
   
     .hero__content {
-      text-align: initial;
+      text-align: center;
+      max-width: 900px;
     }
   
     .hero__title::after {
-      transform: none;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   
     .hero__info {
-      justify-content: initial;
-    }
-  
-    .hero__img {
-      justify-self: flex-end;
+      justify-content: center;
     }
   }
   
